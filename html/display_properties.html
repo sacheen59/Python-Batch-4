@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display property</title>
+    <style>
+      .heading-text {
+        background-color: red;
+        display: inline-block;
+        width: 900px;
+        cursor: pointer;
+        /* padding: 10px; */
+      }
+      .heading-text:hover{
+        background-color: yellow;
+    }
+      .inline-element{
+        background-color: yellow;
+        display: block;
+    }
+    .container{
+        height: 400px;
+        width: 400px;
+        background-color: blue;
+        border: 10px solid black;
+        /* border-radius: 50%; */
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading-text">This is headline text</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, nobis?</p>
+    <span
+      class="inline-element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+      placeat?</span
+    >
+    <span
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+      repellat!</span
+    >
+
+    <!-- box model -->
+    <div class="container">
+        <p>Simran Bhandari</p>
+    </div>
+  </body>
+</html>
