@@ -70,7 +70,6 @@ fruits = ["apple", "banana", "orange", "papaya", "mango", "kiwi", "watermelon"]
 # range(20)
 
 # update
-
 # numbers = [1,2,3,4,5,6]
 
 # numbers[0]= "apple"
@@ -85,16 +84,16 @@ fruits = ["apple", "banana", "orange", "papaya", "mango", "kiwi", "watermelon"]
 
 # remove(value)
 # fruits = ["apple","banana","orange"]
-# fruits.remove("apple")
+# fruits.remove("strawberry")
 # print(fruits)
 
 
 # print(fruits)
 
-# fruits = ["apple","banana","orange"]
-# item = fruits.pop(1)
-# print(fruits)
-# print(item)
+fruits = ["apple","banana","orange"]
+item = fruits.pop(1)
+print(fruits)
+print(item)
 # pop(index)
 # removed_item = fruits.pop()
 # print(fruits)
@@ -155,6 +154,7 @@ fruits = ["apple", "banana", "orange", "papaya", "mango", "kiwi", "watermelon"]
 # ]
 
 # for row in matrix:
+#     # print("row ===> ",row)
 #     for col in row:
-#         print(col)
+#         print("data ===> ",col)
 
