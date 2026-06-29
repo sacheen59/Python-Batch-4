@@ -57,6 +57,19 @@ def read_students():
         )
     conn.close()
 
+def update_student(student_id, field, new_value):
+    conn = sqlite3.connect("student_info.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        f'''
+            UPDATE student_info
+            SET {field} = ?
+            WHERE id = ?
+        ''', (new_value, student_id)
+    )
+    conn.commit()
+    conn.close()
+
 def delete_student(student_id):
     conn = sqlite3.connect("student_info.db")
     cursor = conn.cursor()
@@ -85,8 +98,31 @@ while True:
     elif choice == "2":
         read_students()
 
+    elif choice == "3":
+        update_choice = input("Enter 1 for name, 2 for email, 3 for age, 4 for subject, 5 for fee: ")
+        student_id  = input("Enter student id: ")
+        if update_choice == "1":
+            new_name = input("Enter the new name: ")
+            update_student(student_id, "name", new_name )
+        elif update_choice == "2":
+            new_email = input("Enter your new email: ")
+            update_student(student_id, "email", new_email)
+        elif update_choice == "3":
+            new_age = int(input("Enter your new email: "))
+            update_student(student_id, "age", new_age)
+
+        elif update_choice == "4":
+            new_subject = input("Enter your new subject: ")
+            update_student(student_id, "subject", new_subject)
+        elif update_choice == "5":
+            new_fee = int(input("Enter your new fee: "))
+            update_student(student_id, "fee", new_fee)
+        else:
+            print("Invalid choice")
+
     elif choice == "4":
         student_id = input("Enter the id of the user: ")
         delete_student(student_id)
 
-
+    else:
+        print("Invalid choice")
