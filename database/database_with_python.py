@@ -43,6 +43,35 @@ def create_student(name, email, age, subject, fee):
     finally:
         conn.close()
 
+def read_students():
+    conn = sqlite3.connect("student_info.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * from student_info")
+    rows = cursor.fetchall()
+    for data in rows:
+        print(
+            f'''
+            Name: {data[1]} | Email: {data[2]} | Age: {data[3]} | Course: {data[4]} | Fees: {data[5]}
+            '''
+        )
+    conn.close()
+
+def delete_student(student_id):
+    conn = sqlite3.connect("student_info.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        f"DELETE FROM student_info WHERE id = ?",(student_id)
+    )
+    conn.commit()
+    if cursor.rowcount > 0:
+        print("Student deleted successfully")
+    else:
+        print("Student with that id doesnot exists")
+    conn.close()
+
+
+
 while True:
     choice = input("Enter 1 to insert, 2 to read, 3 to update and 4 to delete: ")
     if choice == "1":
@@ -52,5 +81,12 @@ while True:
         subject = input("Enter your subject: ")
         fee = int(input("Enter your fee: "))
         create_student(name=name, age=age, email=email, subject=subject, fee=fee)
+
+    elif choice == "2":
+        read_students()
+
+    elif choice == "4":
+        student_id = input("Enter the id of the user: ")
+        delete_student(student_id)
 
 
