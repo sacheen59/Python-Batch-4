@@ -23,6 +23,7 @@
 # print(student_info["fee"])
 
 # student_info["fee"] = 40000
+# student_info["age"] = 20
 # print(student_info)
 
 # print(len(student_info))
@@ -37,7 +38,11 @@
 # student_info = {
 #     "name": "Prastut",
 #     "course": "python with Django",
-#     "marks": [20,30,40,50]
+#     "marks": [20,30,40,50],
+#     "subject": {
+#         "english": 20,
+#         "math": 90
+#     }
 # }
 # length of dict
 # print(len(student_info))
@@ -55,17 +60,19 @@
 #     "name": "Prastut",
 #     "age": 23,
 #     "course": "python",
+#     # "fee":20000
 # }
 
 # access
 # .get()
-# student_info = {
-#     "name": "Ares Giri",
-#     "course": "Python with Django",
-#     "fee": 20000,
-# }
+# print(student_info.get("fee", 30000))
+student_info = {
+    "name": "Ares Giri",
+    "course": "Python with Django",
+    "fee": 20000,
+}
 
-# name_of_student = student_info.pop("duration","3.5 Months")
+# name_of_student = student_info.pop("duration",3.5)
 # print(name_of_student)
 # print(student_info)
 # student_info["duration"]
@@ -92,8 +99,8 @@
 # print(course)
 
 # popitem()
-# item = student_info.popitem()
-# print(student_info)
+item = student_info.popitem()
+print(student_info)
 # print(item)
 
 # first_student = {
@@ -126,61 +133,40 @@
 # total_marks = sum(marks)
 # print(total_marks)
 
-student_info = [
-    {
-        "name": "Ram",
-        "marks": {
-            "math": 90,
-            "social": 20,
-            "english": 40,
-        }
-    },
-    {
-        "name": "Hari",
-        "marks": {
-            "math": 85,
-            "social": 45,
-            "english": 35,
-        }
-    },
-    {
-        "name": "Geeta",
-        "marks": {
-            "math": 55,
-            "social": 58,
-            "english": 29,
-        }
-    },
-    {
-        "name": "Sita",
-        "marks": {
-            "math": 56,
-            "social": 86,
-            "english": 49,
-        }
-    },
-]
-
-result = []
-
-for data in student_info:
-    print(data)
-    student_name = data["name"]
-    student_marks = data["marks"]
-    student_individual_total = 0
-    for values in student_marks.values():
-        student_individual_total += values
-    result.append((student_name, student_individual_total))
-    # result.append((student_individual_total, student_name))
-
-def sorting_key(x):
-    return x[1]
-
-sorted_result = sorted(result, reverse=True, key=sorting_key)
-print(f"{sorted_result[0][0]} got the hightest marks with {sorted_result[0][1]}")
-
-
-
+# student_info = [
+#     {
+#         "name": "Ram",
+#         "marks": {
+#             "math": 90,
+#             "social": 20,
+#             "english": 40,
+#         }
+#     },
+#     {
+#         "name": "Hari",
+#         "marks": {
+#             "math": 85,
+#             "social": 45,
+#             "english": 35,
+#         }
+#     },
+#     {
+#         "name": "Geeta",
+#         "marks": {
+#             "math": 55,
+#             "social": 58,
+#             "english": 29,
+#         }
+#     },
+#     {
+#         "name": "Sita",
+#         "marks": {
+#             "math": 56,
+#             "social": 86,
+#             "english": 49,
+#         }
+#     },
+# ]
 # - from the given data find which student got the highest marks with his/her name.
 # - find the highest marks of a subject with subject name
 
